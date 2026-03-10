@@ -1,0 +1,115 @@
+:root {
+  --color-merino: hsl(36, 43%, 93%);
+  --color-fawn: hsl(34, 42%, 64%);
+  --color-mirage: hsl(240, 28%, 14%);
+  --color-dark: hsl(224, 48%, 16%);
+  --color-marine: hsl(213, 73%, 22%);
+  --color-watermelon: hsl(350, 79%, 59%);
+  --color-platinum: hsl(36, 25%, 88%);
+  --color-offwhite: hsl(36, 33%, 97%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-white-85: hsla(0, 0%, 100%, 0.85);
+
+  --bg-main: var(--color-offwhite);
+
+  --text-primary: var(--color-mirage);
+  --text-light: var(--color-white);
+  --text-nav: var(--color-white-85);
+
+  --accent: var(--color-fawn);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", serif;
+}
+
+/* navbar styles start */
+
+#mainNav {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+  padding: 1.2rem 0;
+}
+
+#mainNav .navbar-brand {
+  font-family: "Playfair Display";
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--text-light);
+  letter-spacing: -0.5px;
+}
+
+.navbar-brand span {
+  color: var(--accent);
+}
+
+#mainNav .nav-link {
+  color: var(--text-nav);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+#mainNav .nav-link:hover {
+  color: var(--text-light);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar-toggler {
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  padding: 0.3rem 0.6rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* navbar styles end */
