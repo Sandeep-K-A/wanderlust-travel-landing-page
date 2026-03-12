@@ -9,12 +9,12 @@
   --color-offwhite: hsl(36, 33%, 97%);
   --color-white: hsl(0, 0%, 100%);
   --color-white-85: hsla(0, 0%, 100%, 0.85);
+  --color-white-75: hsla(0, 0%, 100%, 0.75);
 
   --bg-main: var(--color-offwhite);
 
   --text-primary: var(--color-mirage);
   --text-light: var(--color-white);
-  --text-nav: var(--color-white-85);
 
   --accent: var(--color-fawn);
 }
@@ -73,7 +73,7 @@ h4 {
 }
 
 #mainNav .nav-link {
-  color: var(--text-nav);
+  color: var(--color-white-85);
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 1.5px;
@@ -171,9 +171,83 @@ h4 {
   animation: fadeUp 0.8s 0.15s ease both;
 }
 
-.hero-title em{
+.hero-title em {
   font-style: italic;
   color: var(--color-fawn);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-white-75);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-top: 1.25rem;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.hero-cta {
+  margin-top: 2.5rem;
+  animation: fadeUp 0.8s 0.45s ease both;
+}
+
+.btn-primary-custom {
+  background: var(--color-fawn);
+  color: var(--color-mirage);
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  border-radius: 0.2rem;
+  padding: 1rem 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  background: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px hsla(0, 0%, 0%, 0.3);
+}
+
+.btn-outline-custom {
+  background: transparent;
+  color: hsla(0, 0%, 100%, 0.85);
+  border: 1px solid hsla(0, 0%, 100%, 0.35);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  border-radius: 0.2rem;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+  border-color: var(--color-fawn);
+  color: var(--color-fawn);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  color: hsla(0, 0%, 100%, 0.5);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-align: center;
+  transform: translateX(-50%);
+  animation: fadeUpCenter 0.8s 0.8s ease both;
+}
+
+.hero-scroll i {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 0.4rem;
+  animation: bounce 2s infinite;
 }
 /* ANIMATIONS */
 
@@ -185,5 +259,36 @@ h4 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpCenter {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes pulse{
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
   }
 }
