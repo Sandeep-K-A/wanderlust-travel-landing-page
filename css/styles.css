@@ -283,8 +283,113 @@ h4 {
   font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: hsla(0, 0%, 100%, 0.5);
   margin-top: 0.3rem;
+}
+
+/* stats bar styles end */
+
+/* features styles start */
+
+.features {
+  background: var(--color-offwhite);
+  padding: 8rem 0;
+  position: relative;
+}
+
+.features-label {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--color-fawn);
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.features-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+}
+
+.features-title em {
+  font-style: italic;
+  color: var(--color-marine);
+}
+
+.features-description {
+  font-size: 1rem;
+  color: hsl(0, 0%, 40%);
+  line-height: 1.8;
+  max-width: 420px;
+}
+
+.feature-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-platinum);
+  border-radius: 0.5rem;
+  padding: 2.5rem 2rem;
+  transition: all 0.35s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 0;
+  background: var(--color-fawn);
+  transition: height 0.35s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px hsla(240, 28%, 14%, 0.1);
+  border-color: transparent;
+}
+
+.feature-card:hover::before {
+  height: 100%;
+}
+
+.feature-icon {
+  width: 54px;
+  height: 54px;
+  background: var(--color-platinum);
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  color: var(--color-marine);
+  margin-bottom: 1.5rem;
+  transition: background 0.3s;
+}
+
+.feature-card:hover .feature-icon {
+  background: var(--color-mirage);
+  color: var(--color-fawn);
+}
+
+.feature-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: var(--color-mirage);
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: hsl(0, 0%, 47%);
+  line-height: 1.7;
+  margin: 0;
 }
 /* ANIMATIONS */
 
@@ -330,13 +435,15 @@ h4 {
   }
 }
 
-.reveal{
+.reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
-.reveal.visible{
+.reveal.visible {
   opacity: 1;
   transform: none;
 }
