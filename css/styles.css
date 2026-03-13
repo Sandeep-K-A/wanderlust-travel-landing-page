@@ -60,6 +60,13 @@ h4 {
   padding: 1.2rem 0;
 }
 
+#mainNav.scrolled {
+  background: hsla(240, 28%, 14%, 0.96);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 30px hsla(0, 0%, 0%, 0.25);
+  padding: 0.7rem 0;
+}
+
 #mainNav .navbar-brand {
   font-family: "Playfair Display";
   font-weight: 900;
@@ -249,6 +256,36 @@ h4 {
   margin-top: 0.4rem;
   animation: bounce 2s infinite;
 }
+
+/* hero styles end */
+
+/* stats bar styles start */
+
+.stats-bar {
+  background: var(--color-mirage);
+  padding: 2.5rem 0;
+  border-bottom: 1px solid hsla(34, 42%, 64%, 0.2);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.stat-num {
+  color: var(--color-fawn);
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.3rem;
+}
 /* ANIMATIONS */
 
 @keyframes fadeUp {
@@ -283,7 +320,7 @@ h4 {
   }
 }
 
-@keyframes pulse{
+@keyframes pulse {
   0%,
   100% {
     opacity: 0.5;
@@ -291,4 +328,15 @@ h4 {
   50% {
     opacity: 1;
   }
+}
+
+.reveal{
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible{
+  opacity: 1;
+  transform: none;
 }
