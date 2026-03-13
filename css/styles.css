@@ -303,7 +303,7 @@ h4 {
   font-weight: 600;
   letter-spacing: 4px;
   color: var(--color-fawn);
-  display: flex;
+  display: block;
   margin-bottom: 1rem;
 }
 
@@ -502,6 +502,126 @@ h4 {
 }
 
 /* destination styles end */
+
+/* contact styles start */
+
+.contact {
+  padding: 8rem 0;
+  background: var(--color-merino);
+  position: relative;
+}
+
+.contact-wrapper {
+  background: var(--color-white);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 30px 80px hsla(240, 28%, 14%, 0.1);
+}
+
+.contact-details {
+  background: var(--color-mirage);
+  padding: 4rem 3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-details h3 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--text-light);
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+.contact-details p {
+  color: hsla(0, 0%, 100%, 0.6);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  color: var(--color-white-75);
+  font-size: 0.9rem;
+}
+
+.contact-info-item i {
+  width: 38px;
+  height: 38px;
+  background: hsla(34, 42%, 64%, 0.15);
+  border-radius: 0.4rem;
+  color: var(--color-fawn);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.contact-form-area {
+  padding: 4rem 3rem;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 53%);
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  border: 1px solid var(--color-platinum);
+  border-radius: 0.3rem;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-family: "DM Sans", sans-serif;
+  color: var(--color-mirage);
+  background: var(--color-offwhite);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form-control:focus {
+  border-color: var(--color-fawn);
+  box-shadow: 0 0 0 3px hsla(34, 42%, 64%, 0.15);
+  background: var(--color-white);
+  outline: none;
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+.btn-submit {
+  background: var(--color-mirage);
+  color: var(--color-white);
+  border: none;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background: var(--color-fawn);
+  color: var(--color-mirage);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px hsla(240, 28%, 14%, 0.2);
+}
 /* ANIMATIONS */
 
 @keyframes fadeUp {
