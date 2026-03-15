@@ -1,0 +1,156 @@
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-fawn: hsl(34, 42%, 64%);
+  --color-white-85: hsla(0, 0%, 100%, 0.85);
+  --color-night: hsl(240, 5%, 4%);
+  --color-cinder: hsl(240, 11%, 7%);
+  --color-charcoal: hsl(240, 10%, 12%);
+  --color-iron: hsl(240, 9%, 18%);
+  --color-gold: hsl(44, 54%, 54%);
+  --color-gold-lt: hsl(45, 73%, 66%);
+  --color-sakura: hsl(347, 61%, 77%);
+  --color-moss: hsl(124, 15%, 42%);
+  --color-fog: hsl(240, 7%, 57%);
+  --color-paper: hsl(40, 29%, 92%);
+  --color-snow: hsl(60, 17%, 98%);
+
+  --text-light: var(var(--color-white));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  background: var(--color-night);
+  color: var(--color-snow);
+  overflow-x: hidden;
+}
+
+/* navbar styles start */
+
+#mainNav {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+  padding: 1.2rem 0;
+}
+
+#mainNav.scrolled {
+  background: hsla(240, 5%, 4%, 0.92);
+  backdrop-filter: blur(20px);
+  padding: 0.9rem 0;
+  border-bottom: 1px solid hsla(44, 54%, 54%, 0.12);
+}
+
+#mainNav .navbar-brand {
+  font-family: "Playfair Display";
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--text-light);
+  letter-spacing: -0.5px;
+}
+
+.navbar-brand span {
+  color: var(--color-fawn);
+}
+
+#mainNav .nav-link {
+  color: var(--color-white-85);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  transition: color 0.2s;
+  position: relative;
+}
+
+#mainNav .nav-link:hover {
+  color: var(--color-gold);
+}
+
+#mainNav .nav-back {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: hsla(0, 0%, 100%, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 1.1rem;
+  border-radius: 0.15rem;
+  transition: all 0.25s;
+}
+
+#mainNav .nav-back:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.navbar-toggler {
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  padding: 0.3rem 0.6rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* navbar styles end */
+
+/* hero styles start */
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url(../images/kyotohero.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1.08);
+  animation: heroScaling 12s ease-out forwards;
+}
+
+.hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 10, 11, 1) 0%,
+      rgba(10, 10, 11, 0.6) 40%,
+      rgba(10, 10, 11, 0.25) 100%
+    ),
+    linear-gradient(to right, rgba(10, 10, 11, 0.5) 0%, transparent 50%);
+}
+
+/* ANIMATIONS */
+
+@keyframes heroScaling {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
