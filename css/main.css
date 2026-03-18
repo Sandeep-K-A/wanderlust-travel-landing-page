@@ -496,6 +496,11 @@ h4 {
   transition: all 0.3s ease;
 }
 
+.destination-arrow a{
+  color: var(--color-white);
+  text-decoration: none;
+}
+
 .destination-card:hover .destination-arrow {
   opacity: 1;
   transform: translateY(0);
